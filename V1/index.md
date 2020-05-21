@@ -20,7 +20,7 @@ EDS collects data using any of the following methods:
 Once collected, the data is stored locally in configurable data storage within EDS, until it can be sent to permanent storage in a PI System or in OSIsoft Cloud Services through periodic egress. The data can also be read from local storage by custom applications using REST APIs.
 
 ## Edge Data Store architecture
-EDS runs on both Linux and Windows platforms and is comprised of separate components that each perform a specific function within EDS. The following diagram shows Edge Data Store architecture with all of its components and how the data flow through those components:
+EDS runs on both Linux and Windows platforms and is comprised of separate components that each perform a specific function within EDS. The following diagram shows Edge Data Store architecture with all of its components and how the data flows through those components:
 
 ![EDS architecture](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSArchitecturalDiag.jpg "EDS architecture")
 
