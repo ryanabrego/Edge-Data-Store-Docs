@@ -70,9 +70,9 @@ Use the Ingress Debug Expiration property when debugging OMF to set the date and
 
 Examples of valid strings representing date and time:
 
-    UTC: “yyyy-mm-ddThh:mm:ssZ”
+    UTC: "yyyy-mm-ddThh:mm:ssZ"
 
-    Local: “mm-dd-yyyy hh:mm:ss”
+    Local: "mm-dd-yyyy hh:mm:ss"
 
 When logging is activated, the content of an incoming OMF message, including the headers, is written to a file in the Logs directory. For an active application, this file can become quite large. As a result, debug information is stored to disk in another format than usual log messages. A single file is written to the usual logs directory for every incoming OMF type, container, and data message.
 
