@@ -57,7 +57,7 @@ Complete the following steps to install EDS on Windows from the command line:
 2. Enter the msiexec command and specify parameters to run the installation, using the following example as a guide.
 
 ```
-Msiexec /quiet /i EdgeDataStore.msi PORT=”<number>” INSTALLFOLDER=”<file_path>” WIXUI_ENABLEMODBUS=”1” WIXUI_ENABLEOPCUA=”1”
+Msiexec /quiet /i EdgeDataStore.msi PORT="<number>" INSTALLFOLDER="<file_path>" WIXUI_ENABLEMODBUS="1" WIXUI_ENABLEOPCUA="1"
 ```
 
    Parameters:
@@ -76,6 +76,8 @@ Msiexec /quiet /i EdgeDataStore.msi PORT=”<number>” INSTALLFOLDER=”<file_p
 You must have administrative privileges to install the software, for example root or sudo privilege, and the Linux OS must be up to date for the install to succeed. 
 
 For instructions on how to verify the Edge Data Store installation, see [Verify installation](xref:VerifyInstallation1-0).
+
+**Note:** For devices using Ubuntu 20.04 or higher, install the libicu63 package prior to installing Edge Data Store.
 
 ### Download the distribution file
 

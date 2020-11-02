@@ -8,6 +8,8 @@ Once the OCS or PI Server destinations are prepared to receive OMF messages, con
 
 **Note:** You cannot add egress configurations manually because some parameters are stored to disk encrypted. You must use the REST endpoints to add/edit egress configuration. For additional endpoints, see [REST URLs](#rest-urls).
 
+**Warning:** If a periodic egress endpoint is deleted/removed and then recreated with backfilling set to true, duplicate data will appear on any stream that was previously egressed successfully. New streams will not see duplicate data.
+
 ## Create egress endpoints
 
 Complete the following procedure to create new egress endpoints:
@@ -21,7 +23,7 @@ Complete the following procedure to create new egress endpoints:
 Example using cURL, which must be run from the directory where the JSON file is saved:
 
 ```bash
-curl -d "@Storage_PeriodicEgressEndspoints.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints"
+curl -d "@PeriodicEgressEndpoints.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints"
 ```
 
 **Note** The @ symbol is a required prefix for the above command.
@@ -33,15 +35,15 @@ curl -d "@Storage_PeriodicEgressEndspoints.config.json" -H "Content-Type: applic
 | **Backfill**                    | Optional                  | Boolean   | An indicator of whether data should be backfilled. Enabling the backfill flag will result in all data from the earliest index to the latest stored index being egressed. Backfilling occurs for each stream, including when a new stream is added. Once backfilling is complete for a stream, any out-of-order data is not egressed.  Defaults to false. |
 | **ClientId**                    | Required for OCS endpoint | string    | Used for authentication with the OCS OMF endpoint. |
 | **ClientSecret**                | Required for OCS endpoint | string    | Used for authentication with the OCS OMF endpoint. |
-| **DebugExpiration**             | Optional                  | string    | Enables logging of detailed information, for each outbound HTTP request pertaining to this egress endpoint, to disk. The value represents the date and time this detailed information should stop being saved. Examples of valid strings representing date and time:  UTC: “yyyy-mm-ddThh:mm:ssZ”, Local: “mm-dd-yyyy hh:mm:ss”. For more information, see [Troubleshoot Edge Data Store](../Troubleshooting/Troubleshooting_1-0.md). |
+| **DebugExpiration**             | Optional                  | string    | Enables logging of detailed information, for each outbound HTTP request pertaining to this egress endpoint, to disk. The value represents the date and time this detailed information should stop being saved. Examples of valid strings representing date and time:  UTC: "yyyy-mm-ddThh:mm:ssZ", Local: "mm-dd-yyyy hh:mm:ss". For more information, see [Troubleshoot Edge Data Store](../Troubleshooting/Troubleshooting_1-0.md). |
 | **Description**                 | Optional                  | string    | Friendly description |
-| **EgressFilter**                | Optional                  | string    | A filter used to determine which streams and types are egressed. For more information on valid filters, see [Searching](../Sds/Searching_1-0.md). |
+| **EgressFilter**                | Optional                  | string    | A filter used to determine which streams and types are egressed. For more information on valid filters, see [Search in SDS](../Sds/Search_1-0.md). |
 | **Enabled**                     | Optional                  | Boolean      | An indicator of whether egress is enabled when the egress endpoint is loaded. Defaults to true. |
 | **Endpoint**                    | Required                  | string    | Destination that accepts OMF v1.1 messages. Supported destinations include OCS and PI. |
 | **ExecutionPeriod**             | Required                  | string    | Frequency of time between each egress action. Must be a string in the format d.hh:mm:ss.##. |
 | **Id**                          | Optional                  | string    | Unique identifier |
 | **Name**                        | Optional                  | string    | Friendly name |
-| **NamespaceId**                 | Optional                  | string    | Represents the namespace that will be egressed. There are two available namespaces: default and diagnostics. Default namespace is “default”. |
+| **NamespaceId**                 | Optional                  | string    | Represents the namespace that will be egressed. There are two available namespaces: default and diagnostics. Default namespace is "default". |
 | **Password**                    | Required for PI endpoint  | string    | Used for Basic authentication to the PI Web API OMF endpoint. |
 | **StreamPrefix**                | Optional                  | string    | Prefix applied to any streams that are egressed. A null string or a string containing only empty spaces will be ignored. The following restricted characters are not allowed: / : ? # [ ] @ ! $ & ' ( ) \ * + , ; = % | < > { } ` " |
 | **TokenEndpoint**               | Optional for OCS endpoint | string    | Used to retrieve an OCS token from an alternative endpoint. *This is not normally necessary with OCS. Only use if directed to do so by customer support*. |
