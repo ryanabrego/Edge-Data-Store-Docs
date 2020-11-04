@@ -9,7 +9,7 @@
   topicHref: SDS_Views_1-0.md
 - name: Indexes
   href: Indexes/toc.yml
-  href: indexes_1-0.md
+  topicHref: indexes_1-0.md
 - name: Read data
   href: Read data/toc.yml
   topicHref: Read_Data_1-0.md
