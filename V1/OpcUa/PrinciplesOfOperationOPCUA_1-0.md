@@ -48,12 +48,3 @@ Stream ID is a unique identifier for each stream created by the adapter for a gi
 ## Export operation
 
 The OPC UA EDS adapter is able to export available OPC UA dynamic variables by browsing the OPC UA hierarchies or sub-hierarchies as part of the data source configuration process. For more information, see [Data source configuration](xref:OPCUADataSourceConfiguration1-0).
-
-## Buffering
-
-Because the OPC UA EDS adapter sends data directly to EDS, buffering capability is not provided. EDS acts as a buffer before the data is egressed to either a PI Server or OCS. The amount of data stored in EDS is controlled by the following storage parameters:
-
- - `StreamStorageLimitMb`
- - `StreamStorageTargetMb`
-
-For more information about configuring data storage in EDS, see [Storage runtime configuration](xref:storageruntime1-0).
