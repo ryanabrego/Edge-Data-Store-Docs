@@ -54,7 +54,7 @@ Complete the following steps to generate the default data selection file and use
   ```
 
 4. To ingress a stream to Edge Data Store, change the value of the **Selected** key from `false` to `true`. All streams in the auto generated data selection file are initially set to `false`.
-5. Save the the file.
+5. Save the file.
 6. Run the following curl script from the directory where the file is located, updating the file name and destination in the script if needed:
 
   ```bash
