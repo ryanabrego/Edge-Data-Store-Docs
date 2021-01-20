@@ -51,7 +51,7 @@ Complete the following to change the logging configuration:
       Example using curl (run this command from the same directory where the file is located):
 
       ```bash
-      curl -i -d "@System_Logging.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/System/Logging
+      curl -d "@System_Logging.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/System/Logging
       ```
 
     On successful execution, the log level change takes effect immediately during runtime. The other configurations (log file size and file count) get updated after Edge Data Store is restarted. 
@@ -82,4 +82,3 @@ The following parameters are available for configuring logging.
 | **LogFileCountLimit**       | Optional | `integer` | Yes      | The maximum number of log files that the service will create for the component. It must be a positive integer.             |
 | **LogFileSizeLimitBytes**   | Optional | `integer` | Yes      | The maximum size in bytes of log files that the service will create for the component. It must be a positive integer.            |
 | **LogLevel**                | Optional | reference | No       | The log level settings that you want. The following options are available: <br> **Verbose** - Captures all messages: Verbose, Debug, Information, Warning and Error <br> **Debug** - Captures most messages: Debug, Information, Warning and Error <br> **Information** - Captures most messages: Information, Warning and Error <br> **Warning** - Captures only Warning and Error messages <br> **Error** - Captures Error messages only |
-

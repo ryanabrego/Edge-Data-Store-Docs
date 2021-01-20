@@ -21,7 +21,7 @@ Complete the following steps to configure the Modbus TCP data source:
 The following example shows the HTTPS request using curl, which must be run from the same directory where the file is located, and uses the adapter instance created during installation, which is Modbus1:
 
 ```bash
-curl -v -d "@Modbus1DataSource.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/Modbus1/DataSource"
+curl -d "@Modbus1DataSource.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/Modbus1/DataSource"
 ```
 
 ## Parameters for Modbus TCP data source
