@@ -19,7 +19,7 @@ Complete the following steps to configure system health endpoints:
     Example using curl (run this command from the same directory where the file is located):
 
     ```bash
-    curl -v -d "@System_HealthEndpoints.json" -H "Content-Type: application/json" http://localhost:5590/api/v1/configuration/System/HealthEndpoints
+    curl -d "@System_HealthEndpoints.json" -H "Content-Type: application/json" http://localhost:5590/api/v1/configuration/System/HealthEndpoints
     ```
 
 ## Parameters

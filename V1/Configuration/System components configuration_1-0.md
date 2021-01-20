@@ -34,7 +34,7 @@ The Storage component is required for Edge Data Store to run and only one Storag
 3. From the same directory where the file exists, run the following curl script:
 
     ```bash
-    curl -i -d "@AddComponent.json" -H "Content-Type: application/json" http://localhost:5590/api/v1/configuration/system/components
+    curl -d "@AddComponent.json" -H "Content-Type: application/json" http://localhost:5590/api/v1/configuration/system/components
     ```
 
 After the curl command completes successfully, the new component is available for configuration and use.
