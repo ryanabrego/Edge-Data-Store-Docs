@@ -40,7 +40,7 @@ Blue boxes in the diagram show ways to interact with EDS from the local device:
 
 EDS requires an endpoint to connect to REST APIs on the local device, which is shown outlined in blue in the diagram. By default, the endpoint uses port 5590; however, it can be configured to use another port. 
 
-Orange arrows show data flowing into EDS and blue arrows show data flowing out of EDS.
+Orange arrows show data flowing into EDS and blue arrows show data flowing out of EDS. 
 
 For detailed information about configuring each component of EDS, see [Configuration](xref:Configuration1-0)
 
