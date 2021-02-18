@@ -14,7 +14,7 @@ EDS collects data using any of the following methods:
 
 * Built-in OPC UA connectivity
 * Built-in Modbus TCP connectivity
-* Custom application using OSIsoft Message Format (OMF)
+* Custom application using OSIsoft Message Format (OMF) 
 * Custom application using REST API
 
 Once collected, the data is stored locally in configurable data storage within EDS, until it can be sent to permanent storage in a PI System or in OSIsoft Cloud Services through periodic egress. The data can also be read from local storage by custom applications using REST APIs.
